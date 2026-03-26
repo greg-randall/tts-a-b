@@ -1,6 +1,8 @@
 # TTS Blind A/B Testing System
 
-A modern, web-based tool for performing blind A/B testing on Text-to-Speech (TTS) voices and ranking them using the Elo rating system.
+A modern, web-based tool for performing blind A/B testing on Text-to-Speech (TTS) voices and ranking them using the Elo rating system. You can [vote here](https://gregr.org/tts-a-b/) and view the [current rankings](https://gregr.org/tts-a-b/results) or see the [latest static export](RANKINGS.md).
+
+![TTS Voice Rankings Screenshot](screenshot.png)
 
 ## Features
 
