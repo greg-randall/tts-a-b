@@ -6,6 +6,7 @@ run.sh
 
 *.md
 !README.md
+!RANKINGS.md
 
 *.filepart
 
