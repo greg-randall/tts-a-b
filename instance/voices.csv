@@ -1,0 +1,136 @@
+id,name,description,rating,matches,wins,losses,win_rate,confidence_interval,lower_bound,upper_bound,reliability,engine
+40,bm_lewis,British Male,1109.0,9,9,0,100.0,133.0,976.0,1242.0,90.0,Kokoro
+15,af_bella,American Female,1091.0,9,8,1,88.9,133.0,957.0,1224.0,90.0,Kokoro
+16,af_heart,American Female,1087.0,9,8,1,88.9,133.0,954.0,1221.0,90.0,Kokoro
+24,am_adam,American Male,1078.0,11,9,2,81.8,121.0,957.0,1198.0,100.0,Kokoro
+37,bm_daniel,British Male,1073.0,10,8,2,80.0,126.0,947.0,1200.0,100.0,Kokoro
+34,bf_emma,British Female,1067.0,11,8,3,72.7,121.0,947.0,1188.0,100.0,Kokoro
+35,bf_isabella,British Female,1056.0,9,7,2,77.8,133.0,922.0,1189.0,90.0,Kokoro
+32,am_santa,American Male,1050.0,12,8,4,66.7,115.0,934.0,1165.0,100.0,Kokoro
+30,am_onyx,American Male,1045.2907796446116,12,8,4,66.66666666666666,115.47005383792516,929.8207258066864,1160.7608334825368,100.0,Kokoro
+1,en-US-AndrewMultilingualNeural,"Male | Conversation, Copilot | Warm, Confident, Authentic, Honest",1045.0,12,8,4,66.7,115.0,930.0,1161.0,100.0,edge-tts
+29,am_michael,American Male,1045.0,10,7,3,70.0,126.0,919.0,1172.0,100.0,Kokoro
+23,af_sky,American Female,1038.0,12,8,4,66.7,115.0,922.0,1153.0,100.0,Kokoro
+107,inworld_voice_oliver,,1037.4486228550745,3,3,0,,,,,,inworld
+133,inworld_voice_victoria,,1037.228794985449,3,3,0,,,,,,inworld
+58,inworld_voice_clive,,1036.4997895697722,3,3,0,,,,,,inworld
+71,inworld_voice_elliot,,1036.102821267605,3,3,0,,,,,,inworld
+21,af_river,American Female,1030.673486090306,17,10,7,57.1,107.0,920.0,1134.0,100.0,Kokoro
+129,inworld_voice_tristan,,1027.9899554927279,2,2,0,,,,,,inworld
+108,inworld_voice_olivia,,1027.965441949014,2,2,0,,,,,,inworld
+90,inworld_voice_kelsey,,1027.881514131486,2,2,0,,,,,,inworld
+67,inworld_voice_duncan,,1027.8007832633086,2,2,0,,,,,,inworld
+117,inworld_voice_sarah,,1027.6685710598888,2,2,0,,,,,,inworld
+75,inworld_voice_felix,,1027.604413834404,2,2,0,,,,,,inworld
+134,inworld_voice_vinny,,1027.6040176192876,2,2,0,,,,,,inworld
+120,inworld_voice_serena,,1027.5478628227322,2,2,0,,,,,,inworld
+99,inworld_voice_mark,,1027.3828934386322,2,2,0,,,,,,inworld
+132,inworld_voice_victor,,1027.370244443073,2,2,0,,,,,,inworld
+130,inworld_voice_tyler,,1027.3678635698977,2,2,0,,,,,,inworld
+112,inworld_voice_reed,,1027.3391962621113,2,2,0,,,,,,inworld
+86,inworld_voice_jessica,,1027.3301994791302,2,2,0,,,,,,inworld
+48,inworld_voice_bianca,,1027.3137084989849,2,2,0,,,,,,inworld
+54,inworld_voice_cedric,,1027.3137084989849,2,2,0,,,,,,inworld
+56,inworld_voice_chloe,,1027.3137084989849,2,2,0,,,,,,inworld
+60,inworld_voice_craig,,1027.3137084989849,2,2,0,,,,,,inworld
+94,inworld_voice_loretta,,1027.1978996555383,2,2,0,,,,,,inworld
+85,inworld_voice_jason,,1027.109774174111,2,2,0,,,,,,inworld
+65,inworld_voice_derek,,1027.0053417841586,2,2,0,,,,,,inworld
+92,inworld_voice_levi,,1026.8367947841011,2,2,0,,,,,,inworld
+91,inworld_voice_lauren,,1026.716976054478,2,2,0,,,,,,inworld
+128,inworld_voice_trevor,,1026.6244390549516,2,2,0,,,,,,inworld
+4,en-US-BrianNeural,"Male | Conversation, Copilot | Approachable, Casual, Sincere",1022.1099194124494,31,17,14,53.3,103.0,913.0,1120.0,100.0,edge-tts
+27,am_fenrir,American Male,1021.6256457936065,18,9,9,57.14285714285714,106.90449676496975,922.4939126974912,1136.3029062274306,100.0,Kokoro
+70,inworld_voice_elizabeth,,1017.9400761485736,3,2,1,,,,,,inworld
+72,inworld_voice_ethan,,1017.569207612798,3,2,1,,,,,,inworld
+14,af_aoede,American Female,1014.9549031138013,30,15,15,57.89473684210527,91.7662935482247,933.5750099356333,1117.1075970320826,100.0,Kokoro
+28,am_liam,American Male,1013.7263552756988,30,15,15,52.94117647058824,97.01425001453319,920.7468899866294,1114.7753900156958,100.0,Kokoro
+82,inworld_voice_hank,,1005.181793003133,2,1,1,,,,,,inworld
+122,inworld_voice_simon,,1005.0642919941818,2,1,1,,,,,,inworld
+104,inworld_voice_nadia,,1004.998450787991,3,2,1,,,,,,inworld
+87,inworld_voice_jonah,,1004.9375845092904,2,1,1,,,,,,inworld
+95,inworld_voice_lucian,,1004.9214410377859,2,1,1,,,,,,inworld
+135,inworld_voice_wendy,,1004.8902454757239,2,1,1,,,,,,inworld
+121,inworld_voice_shaun,,1004.8745812482215,2,1,1,,,,,,inworld
+77,inworld_voice_graham,,1004.744423174665,2,1,1,,,,,,inworld
+42,inworld_voice_alex,,1004.688931035307,2,1,1,,,,,,inworld
+43,inworld_voice_amina,,1004.6862915010153,2,1,1,,,,,,inworld
+44,inworld_voice_anjali,,1004.6862915010153,2,1,1,,,,,,inworld
+46,inworld_voice_ashley,,1004.6862915010153,2,1,1,,,,,,inworld
+49,inworld_voice_blake,,1004.6862915010153,2,1,1,,,,,,inworld
+52,inworld_voice_callum,,1004.6862915010153,2,1,1,,,,,,inworld
+61,inworld_voice_damon,,1004.6862915010153,2,1,1,,,,,,inworld
+78,inworld_voice_grant,,1004.5710834349478,2,1,1,,,,,,inworld
+83,inworld_voice_jake,,1004.5620433673928,2,1,1,,,,,,inworld
+64,inworld_voice_dennis,,1004.5385184384631,3,2,1,,,,,,inworld
+50,inworld_voice_brandon,,1004.5000714632946,3,2,1,,,,,,inworld
+93,inworld_voice_liam,,1004.4669680264158,2,1,1,,,,,,inworld
+68,inworld_voice_edward,,1004.3981717141112,2,1,1,,,,,,inworld
+62,inworld_voice_darlene,,1004.323072064689,2,1,1,,,,,,inworld
+73,inworld_voice_evan,,1004.2830293891182,2,1,1,,,,,,inworld
+109,inworld_voice_pippa,,1004.2450580345344,2,1,1,,,,,,inworld
+79,inworld_voice_hades,,1004.2404581555319,2,1,1,,,,,,inworld
+89,inworld_voice_kayla,,1004.2181016274745,2,1,1,,,,,,inworld
+119,inworld_voice_selene,,1004.1692319189664,2,1,1,,,,,,inworld
+115,inworld_voice_rupert,,1004.0712664721977,2,1,1,,,,,,inworld
+98,inworld_voice_marcus,,1004.0528405340499,2,1,1,,,,,,inworld
+126,inworld_voice_theodore,,1003.8878273365624,2,1,1,,,,,,inworld
+2,en-US-AndrewNeural,"Male | Conversation, Copilot | Warm, Confident, Authentic, Honest",999.7580676154449,21,11,10,50.0,126.0,872.0,1125.0,100.0,edge-tts
+31,am_puck,American Male,999.3463149982543,19,11,8,42.9,107.0,873.0,1087.0,100.0,Kokoro
+36,bf_lily,British Female,997.9912129340518,31,15,16,50.0,106.90449676496975,894.5431434938326,1108.3521370237722,100.0,Kokoro
+13,af_alloy,American Female,997.965097838148,26,14,12,46.15384615384615,110.94003924504582,874.9096190770392,1096.7896975671308,100.0,Kokoro
+20,af_nova,American Female,997.4147827970688,31,15,16,53.8,111.0,893.0,1115.0,100.0,Kokoro
+17,af_jessica,American Female,997.3132502613745,23,12,11,46.2,111.0,881.0,1103.0,100.0,Kokoro
+101,inworld_voice_mia,,995.3955752427833,2,1,1,,,,,,inworld
+74,inworld_voice_evelyn,,995.3704733549348,2,1,1,,,,,,inworld
+69,inworld_voice_eleanor,,995.2085377033497,2,1,1,,,,,,inworld
+6,en-US-EmmaMultilingualNeural,"Female | Conversation, Copilot | Cheerful, Clear, Conversational",991.5710363323118,24,11,13,45.5,121.0,877.0,1118.0,100.0,edge-tts
+3,en-US-BrianMultilingualNeural,"Male | Conversation, Copilot | Approachable, Casual, Sincere",990.2988678287257,24,10,14,50.0,126.0,878.0,1131.0,100.0,edge-tts
+7,en-US-EmmaNeural,"Female | Conversation, Copilot | Cheerful, Clear, Conversational",989.7361598166551,19,8,11,46.2,111.0,887.0,1109.0,100.0,edge-tts
+88,inworld_voice_julia,,986.3242703828581,3,1,2,,,,,,inworld
+47,inworld_voice_avery,,986.1016962571227,3,1,2,,,,,,inworld
+59,inworld_voice_conrad,,986.0708446531494,3,1,2,,,,,,inworld
+45,inworld_voice_arjun,,986.0553907633209,3,1,2,,,,,,inworld
+102,inworld_voice_miranda,,985.5700666227416,3,1,2,,,,,,inworld
+25,am_echo,American Male,974.8566890445328,11,5,6,40.0,126.0,844.0,1097.0,100.0,Kokoro
+81,inworld_voice_hana,,973.1736939517357,2,0,2,,,,,,inworld
+96,inworld_voice_luna,,973.1116978685319,2,0,2,,,,,,inworld
+113,inworld_voice_riley,,973.0969876118128,2,0,2,,,,,,inworld
+114,inworld_voice_ronald,,973.049268548969,2,0,2,,,,,,inworld
+106,inworld_voice_nate,,972.9202383060596,2,0,2,,,,,,inworld
+97,inworld_voice_malcolm,,972.8891069637804,2,0,2,,,,,,inworld
+105,inworld_voice_naomi,,972.8124387800266,2,0,2,,,,,,inworld
+123,inworld_voice_snik,,972.789719624759,2,0,2,,,,,,inworld
+111,inworld_voice_priya,,972.7412724951145,2,0,2,,,,,,inworld
+63,inworld_voice_deborah,,972.698734637541,2,0,2,,,,,,inworld
+100,inworld_voice_marlene,,972.6917757429514,2,0,2,,,,,,inworld
+76,inworld_voice_gareth,,972.6914305987775,2,0,2,,,,,,inworld
+51,inworld_voice_brian,,972.6862915010153,2,0,2,,,,,,inworld
+53,inworld_voice_carter,,972.6862915010153,2,0,2,,,,,,inworld
+55,inworld_voice_celeste,,972.6862915010153,2,0,2,,,,,,inworld
+57,inworld_voice_claire,,972.6862915010153,2,0,2,,,,,,inworld
+66,inworld_voice_dominus,,972.6862915010153,2,0,2,,,,,,inworld
+41,inworld_voice_abby,,972.684687163183,2,0,2,,,,,,inworld
+80,inworld_voice_hamish,,972.6637086671894,2,0,2,,,,,,inworld
+110,inworld_voice_pixie,,972.6026960987193,2,0,2,,,,,,inworld
+127,inworld_voice_timothy,,972.571080262083,2,0,2,,,,,,inworld
+125,inworld_voice_tessa,,972.511402928807,2,0,2,,,,,,inworld
+116,inworld_voice_saanvi,,972.4923338157049,2,0,2,,,,,,inworld
+131,inworld_voice_veronica,,972.4454734315148,2,0,2,,,,,,inworld
+103,inworld_voice_mortimer,,972.3167185795659,2,0,2,,,,,,inworld
+84,inworld_voice_james,,972.091715026355,2,0,2,,,,,,inworld
+124,inworld_voice_sophie,,972.0252998184523,2,0,2,,,,,,inworld
+39,bm_george,British Male,969.0,11,4,7,36.4,121.0,849.0,1090.0,100.0,Kokoro
+26,am_eric,American Male,966.3794071179227,11,4,7,36.36363636363637,120.60453783110545,845.7748692868173,1086.9839449490282,100.0,Kokoro
+118,inworld_voice_sebastian,,963.0413630941894,3,0,3,,,,,,inworld
+18,af_kore,American Female,960.0,12,4,8,33.3,115.0,845.0,1076.0,100.0,Kokoro
+11,en-US-SteffanNeural,"Male | News, Novel | Rational",954.0,10,3,7,30.0,126.0,827.0,1080.0,100.0,edge-tts
+22,af_sarah,American Female,954.0,12,4,8,33.3,115.0,839.0,1070.0,100.0,Kokoro
+38,bm_fable,British Male,949.0,8,2,6,25.0,141.0,807.0,1090.0,80.0,Kokoro
+19,af_nicole,American Female,947.0,10,3,7,30.0,126.0,821.0,1074.0,100.0,Kokoro
+5,en-US-ChristopherNeural,"Male | News, Novel | Reliable, Authority",934.0,13,4,9,30.8,111.0,823.0,1045.0,100.0,edge-tts
+8,en-US-EricNeural,"Male | News, Novel | Rational",929.0,12,3,9,25.0,115.0,814.0,1045.0,100.0,edge-tts
+9,en-US-GuyNeural,"Male | News, Novel | Passion",911.0,11,2,9,18.2,121.0,791.0,1032.0,100.0,edge-tts
+12,en-US-AnaNeural,"Female | Cartoon, Conversation | Cute",905.0,9,1,8,11.1,133.0,771.0,1038.0,90.0,edge-tts
+10,en-US-RogerNeural,"Male | News, Novel | Lively",898.0,8,0,8,0.0,141.0,757.0,1040.0,80.0,edge-tts
+33,bf_alice,British Female,891.0,9,0,9,0.0,133.0,758.0,1024.0,90.0,Kokoro

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Voice Comparison Test{% endblock %}
+
+{% block body_attrs %}
+    data-auto-play-voice="{{ auto_play_voice }}"
+    data-random-start-percent="{{ random_start_percent }}"
+{% endblock %}
+
+{% block content %}
+    <!-- Intro modal -->
+    <div id="intro-modal-overlay">
+        <div id="intro-modal">
+            <h2>Blind TTS Showdown</h2>
+            <p>Press <strong>Play Voice A</strong> and <strong>Play Voice B</strong> to listen to each sample — or use the playback bar at the bottom to scrub through them. The voices are unlabeled so you're judging sound alone.</p>
+            <p>Once you've heard both, click <strong>"I prefer Voice A"</strong> or <strong>"I prefer Voice B"</strong> to cast your vote. Each vote updates an <a href="https://en.wikipedia.org/wiki/Elo_rating_system" target="_blank" rel="noopener">Elo rating</a> — the same system used to rank chess players — so voices that beat stronger competition rise faster. See the results on the <a href="{{ url_for('results') }}">Rankings</a> page.</p>
+            <button id="intro-modal-close">Got it</button>
+        </div>
+    </div>
+
+    <h1>Voice Comparison Test</h1>
+    <p>Listen to both samples and choose which one you prefer. The samples are randomized and unlabeled for blind testing.</p>
+
+    <div class="test-container">
+        {% for voice in current_voices %}
+            {% set label = 'A' if loop.index0 == 0 else 'B' %}
+            <div class="voice-section">
+                <h2>Voice {{ label }}</h2>
+                
+                <button class="play-button" data-voice="{{ label }}">
+                    <i class="fas fa-play"></i> Play Voice {{ label }}
+                </button>
+                
+                <audio class="voice-audio" data-voice="{{ label }}" src="{{ url_for('static', filename='audio/' + voice.name + '.mp3') }}" preload="auto"></audio>
+                
+                <form method="POST" action="{{ url_for('index') }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="choice" value="{{ label }}">
+                    <button type="submit" class="choice-button">I prefer Voice {{ label }}</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        (function () {
+            if (!sessionStorage.getItem('introDismissed')) {
+                document.getElementById('intro-modal-overlay').style.display = 'flex';
+            }
+            document.getElementById('intro-modal-close').addEventListener('click', function () {
+                document.getElementById('intro-modal-overlay').style.display = 'none';
+                sessionStorage.setItem('introDismissed', '1');
+            });
+        })();
+    </script>
+
+    <div id="controls">
+        <div class="controls-left">
+            <button id="playPauseBtn">▶️</button>
+            <div id="currentTime">0:00</div>
+        </div>
+        <div id="timeSlider">
+            <input type="range" min="0" max="100" value="0" step="0.1">
+        </div>
+        <div class="loop-control">
+            <label for="loopToggle">Loop Recording:</label>
+            <input type="checkbox" id="loopToggle" checked>
+            <br>
+            <label for="repeatMs">Recording Overlap (ms):</label>
+            <input type="number" id="repeatMs" value="250" min="0" max="5000" step="100">
+        </div>
+    </div>
+{% endblock %}

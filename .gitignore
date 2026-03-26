@@ -1,0 +1,15 @@
+instance/tts_testing.db
+
+run.sh
+
+*.log
+
+*.md
+!README.md
+
+*.filepart
+
+__pycache__/
+legacy/
+
+

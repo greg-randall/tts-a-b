@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}TTS Voice Rankings{% endblock %}
+
+{% block content %}
+    <h1>TTS Voice Rankings</h1>
+    <p>
+        Ranking of voices based on Elo rating system with confidence intervals.
+        Only voices with at least {{ min_matches }} matches are included.
+    </p>
+    
+    <details class="column-toggle-drawer">
+        <summary><i class="fas fa-columns"></i> Show/Hide Columns</summary>
+        <div class="column-toggles">
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="rating" checked> Rating
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="name" checked> Voice
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="engine" checked> Engine
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="description" checked> Description
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="visual" checked> Visual
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="sample" checked> Sample
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="confidence"> Confidence (±)
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="range"> Range
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="matches"> Matches
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="record"> Record
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="win_rate"> Win Rate
+            </label>
+            <label class="toggle-item">
+                <input type="checkbox" data-column-toggle="reliability"> Ranking Confidence
+            </label>
+            <button id="resetColumnsBtn" style="margin-left: auto; padding: 5px 10px; cursor: pointer;">
+                <i class="fas fa-undo"></i> Reset to Defaults
+            </button>
+        </div>
+    </details>
+    
+    <table>
+        <thead>
+            <tr>
+                <th data-sortable data-column="rating" data-sort="desc" data-column-id="rating">Rating</th>
+                <th data-sortable data-column="name" data-column-id="name">Voice</th>
+                <th data-sortable data-column="engine" data-column-id="engine">Engine</th>
+                <th data-column-id="description">Description</th>
+                <th data-column-id="visual">Visual</th>
+                <th data-column-id="sample">Sample</th>
+                <th data-sortable data-column="confidence" data-column-id="confidence" class="hidden">Confidence (±)</th>
+                <th data-column-id="range" class="hidden">Range</th>
+                <th data-sortable data-column="matches" data-column-id="matches" class="hidden">Matches</th>
+                <th data-column-id="record" class="hidden">Record</th>
+                <th data-sortable data-column="win_rate" data-column-id="win_rate" class="hidden">Win Rate</th>
+                <th data-sortable data-column="reliability" data-column-id="reliability" class="hidden">Ranking Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for voice in rankings %}
+            <tr>
+                <td data-column-id="rating">{{ voice.rating | round | int }}</td>
+                <td data-column-id="name" style="font-weight: bold;">{{ voice.name }}</td>
+                <td data-column-id="engine">{{ voice.engine }}</td>
+                <td data-column-id="description">{{ voice.description or 'No description available' }}</td>
+                <td data-column-id="visual">
+                    {% set visual_min = 850 %}
+                    {% set visual_max = 1250 %}
+                    {% set visual_range = visual_max - visual_min %}
+                    {% set padded_min = visual_min - (visual_range * 0.1) %}
+                    {% set padded_max = visual_max + (visual_range * 0.1) %}
+                    {% set total_width = 200 %}
+                    
+                    {% set rating_pos = ((voice.rating - padded_min) / (padded_max - padded_min)) * total_width %}
+                    {% set range_start = ((voice.lower_bound - padded_min) / (padded_max - padded_min)) * total_width %}
+                    {% set range_end = ((voice.upper_bound - padded_min) / (padded_max - padded_min)) * total_width %}
+                    {% set range_width = range_end - range_start %}
+                    
+                    {# Clamp values for display #}
+                    {% set rating_pos = [5, [total_width - 5, rating_pos]|min]|max %}
+                    {% set range_start = [2, [total_width - 10, range_start]|min]|max %}
+                    {% set range_width = [10, [total_width - range_start - 2, range_width]|min]|max %}
+
+                    <div class="confidence-bar" data-tooltip="Rating: {{ voice.rating|round|int }} (Range: {{ voice.lower_bound|round|int }}-{{ voice.upper_bound|round|int }})">
+                        <div class="confidence-range" style="left: {{ range_start }}px; width: {{ range_width }}px;"></div>
+                        <div class="rating-point" style="left: {{ rating_pos }}px;"></div>
+                    </div>
+                </td>
+                <td data-column-id="sample">
+                    <button class="play-button" data-voice="{{ voice.name }}" data-compact style="padding: 5px 10px; width: auto; margin: 0;">
+                        <i class="fas fa-play"></i> Play
+                    </button>
+                    <audio class="voice-audio" data-voice="{{ voice.name }}" src="{{ url_for('static', filename='audio/' + voice.name + '.mp3') }}" preload="none"></audio>
+                </td>
+                <td data-column-id="confidence" class="hidden">±{{ voice.confidence_interval | round | int }}</td>
+                <td data-column-id="range" class="hidden">{{ voice.lower_bound | round | int }}-{{ voice.upper_bound | round | int }}</td>
+                <td data-column-id="matches" class="hidden">{{ voice.matches }}</td>
+                <td data-column-id="record" class="hidden">{{ voice.wins }}-{{ voice.losses }}</td>
+                <td data-column-id="win_rate" class="hidden">{{ voice.win_rate | round(1) }}%</td>
+                <td data-column-id="reliability" class="hidden confidence-{{ 'high' if voice.reliability >= 80 else ('medium' if voice.reliability >= 50 else 'low') }}">
+                    {{ voice.reliability | round | int }}%
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div id="controls">
+        <div class="controls-left">
+            <button id="playPauseBtn">▶️</button>
+            <div id="currentTime">0:00</div>
+        </div>
+        <div id="timeSlider">
+            <input type="range" min="0" max="100" value="0" step="0.1">
+        </div>
+        <div class="loop-control">
+            <label for="loopToggle">Loop Recording:</label>
+            <input type="checkbox" id="loopToggle" checked>
+            <br>
+            <label for="repeatMs">Recording Overlap (ms):</label>
+            <input type="number" id="repeatMs" value="250" min="0" max="5000" step="100">
+        </div>
+    </div>
+    
+    <div>
+        <h2>About the Ranking System</h2>
+        <p>
+            <strong>Rating:</strong> The Elo rating represents the estimated skill level of each voice. The baseline is 1000.
+        </p>
+        <p>
+            <strong>Confidence Interval:</strong> Shows the uncertainty in the rating. Wider intervals (larger ± values) indicate less certainty.
+        </p>
+        <p>
+            <strong>Ranking Confidence:</strong> Indicates how trustworthy the rating is based on the number of matches played:
+            <span class="confidence-high">High (80-100%)</span>,
+            <span class="confidence-medium">Medium (50-79%)</span>,
+            <span class="confidence-low">Low (0-49%)</span>
+        </p>
+    </div>
+{% endblock %}
